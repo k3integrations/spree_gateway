@@ -24,6 +24,7 @@ module SpreeGateway
         app.config.spree.payment_methods << Spree::Gateway::Worldpay
         app.config.spree.payment_methods << Spree::Gateway::Banwire
         app.config.spree.payment_methods << Spree::Gateway::UsaEpay
+        app.config.spree.payment_methods << Spree::Gateway::Iats
         app.config.spree.payment_methods << Spree::BillingIntegration::Skrill::QuickCheckout
     end
   end
