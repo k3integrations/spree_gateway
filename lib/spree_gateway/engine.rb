@@ -30,6 +30,7 @@ module SpreeGateway
       app.config.spree.payment_methods << Spree::Gateway::StripeGateway
       app.config.spree.payment_methods << Spree::Gateway::UsaEpayTransaction
       app.config.spree.payment_methods << Spree::Gateway::Worldpay
+      app.config.spree.payment_methods << Spree::Gateway::Iats
     end
 
     def self.activate
