@@ -5,11 +5,12 @@ module Spree
     preference :login, :string
     preference :password, :string
 
-    attr_accessible :preferred_login, :preferred_password
+    # FIXME: Need to test what needs to change in the controller
+    # attr_accessible :preferred_login, :preferred_password
 
     def provider_class
       ActiveMerchant::Billing::IatsGateway
-    end	
+    end
 
     # This is overridden in order to:
     # * set cc_type (since it is nil by default)
