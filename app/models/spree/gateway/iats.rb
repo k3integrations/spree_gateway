@@ -4,12 +4,14 @@ module Spree
   class Gateway::Iats < Gateway
     preference :login, :string
     preference :password, :string
-
-    # FIXME: Need to test what needs to change in the controller
-    # attr_accessible :preferred_login, :preferred_password
+    preference :server, :string, default: "test"
 
     def provider_class
-      ActiveMerchant::Billing::IatsGateway
+      ActiveMerchant::Billing::IatsPaymentsGateway
+    end
+
+    def payment_source_class
+      Spree::CreditCard
     end
 
     # This is overridden in order to:
